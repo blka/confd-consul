@@ -1,0 +1,24 @@
+version: '2'
+services:
+  consul:
+    cpu_shares: 205
+    mem_limit: 128m
+    #image: "micahhausler/confd-consul"
+    build: "./"
+    environment:
+      CONSUL_ACL_DATACENTER: "docker-dc"
+      CONSUL_ACL_MASTER_TOKEN: "SOME_MASTER_TOKEN"
+      CONSUL_ATLAS_INFRASTRUCTURE: "<username>/<environment>"
+      CONSUL_ATLAS_TOKEN: "<api-token>"
+      CONSUL_DNS_PORT: "8600"
+      CONSUL_HTTP_PORT: "8500"
+      CONSUL_DOMAIN: "consul"
+      CONSUL_ENCRYPT_KEY: "<base64 encoded key>"  # Create with `consul keygen`
+    ports:
+      - "8300:8300"
+      - "8301:8301"
+      - "8302:8302"
+      - "8400:8400"
+      - "8500:8500"
+      - "8600:8600"
+      - "8600:8600/udp"

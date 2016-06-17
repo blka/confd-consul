@@ -1,0 +1,27 @@
+{
+  "acl_datacenter": "{{ getenv "CONSUL_ACL_DATACENTER" }}",
+  "acl_master_token": "{{ getenv "CONSUL_ACL_MASTER_TOKEN" }}",
+  "atlas_infrastructure": "{{ getenv "CONSUL_ATLAS_INFRASTRUCTURE" }}",
+  "atlas_join": true,
+  "atlas_token": "{{ getenv "CONSUL_ATLAS_TOKEN" }}",
+  "client_addr": "0.0.0.0",
+  "domain": "{{ getenv "CONSUL_DOMAIN" }}",
+  "data_dir": "/var/consul",
+  "disable_remote_exec": true,
+  "disable_update_check": true,
+  "encrypt": "{{ getenv "CONSUL_ENCRYPT_KEY" }}",
+  "leave_on_terminate": true,
+  "ports": {
+    "dns": {{ getenv "CONSUL_DNS_PORT" }},
+    "http": {{ getenv "CONSUL_HTTP_PORT" }},
+    "https": -1
+  },
+  "recursors": [
+    "8.8.8.8",
+    "8.8.4.4"
+  ],
+  "ui": true,
+  "dns_config": {
+    "allow_stale": false
+  }
+}

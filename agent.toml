@@ -1,0 +1,16 @@
+[template]
+backend = "env"
+src = "agent.tmpl"
+dest = "/config/agent.json"
+mode = "0644"
+keys = [
+  "CONSUL_ACL_DATACENTER",
+  "CONSUL_ACL_MASTER_TOKEN",
+  "CONSUL_ATLAS_INFRASTRUCTURE",
+  "CONSUL_ATLAS_TOKEN",
+  "CONSUL_DNS_PORT",
+  "CONSUL_HTTP_PORT",
+  "CONSUL_DOMAIN",
+  "CONSUL_ENCRYPT_KEY",
+]
+check_cmd = "/bin/consul configtest -config-file={{.src}}"
