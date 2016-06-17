@@ -1,7 +1,7 @@
 [template]
 backend = "env"
-src = "agent.tmpl"
-dest = "/config/agent.json"
+src = "server.tmpl"
+dest = "/config/server.json"
 mode = "0644"
 keys = [
   "CONSUL_ACL_DATACENTER",

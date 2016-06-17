@@ -9,8 +9,8 @@ RUN wget $CONFD_URL -O /usr/local/bin/confd \
     && chmod 755 /usr/local/bin/confd \
     && mkdir -p /etc/confd/conf.d /etc/confd/templates
 
-COPY agent.toml /etc/confd/conf.d/agent.toml
-COPY agent.tmpl /etc/confd/templates/agent.tmpl
+COPY server.toml /etc/confd/conf.d/server.toml
+COPY server.tmpl /etc/confd/templates/server.tmpl
 
 RUN mkdir -p /etc/consul
 
